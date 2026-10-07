@@ -1,0 +1,18 @@
+# Overrides applied on top of values.yaml for the staging environment.
+# Staging should be cheap to run and easy to poke at manually.
+
+model:
+  # TODO: keep this small, same model you used in Part 1
+  name:
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    # TODO: pick limits appropriate for a small, cheap-to-run environment
+    cpu:
+    memory:
+
+persistence:
+  size: 2Gi

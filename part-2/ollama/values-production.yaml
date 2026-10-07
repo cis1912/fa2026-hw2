@@ -1,0 +1,19 @@
+# Overrides applied on top of values.yaml for the production environment.
+# Production gets a bigger model and more resources than staging.
+
+model:
+  # TODO: a step up from staging's model
+  name:
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 1Gi
+  limits:
+    # TODO: pick limits appropriate for a production workload - bigger than
+    # staging's
+    cpu:
+    memory:
+
+persistence:
+  size: 5Gi

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ollama
+  labels:
+    app: ollama
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ollama
+  template:
+    metadata:
+      labels:
+        app: ollama
+    spec:
+      containers:
+        - name: ollama
+          image: # TODO: use the `ollama/ollama:latest` image
+          ports:
+            # TODO: Add ports
+            # Hint: Ollama's API server listens on 11434
+          volumeMounts:
+            # TODO: mount the volume at /root/.ollama
+          readinessProbe:
+            # TODO: check for the port being alive every 5 seconds
+          livenessProbe:
+            # TODO: check for the port being alive every 10 seconds
+      volumes:
+        # TODO: You'll need to configure pvc to make this work

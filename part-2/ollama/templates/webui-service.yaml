@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-ollama-webui
+  labels:
+    app.kubernetes.io/name: ollama-webui
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  type: {{ .Values.webui.service.type }}
+  selector:
+    app.kubernetes.io/name: ollama-webui
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  ports:
+    # TODO: same as Part 1 - name the port "http" and pull the port number
+    # from .Values.webui.service.port instead of hardcoding it
